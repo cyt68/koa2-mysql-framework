@@ -16,7 +16,7 @@
             autorestart: true, // 程序崩溃后自动重启
             env: {
                 "NODE_ENV": "uat",
-                "PORT": 3000
+                "PORT": 80
             }
         },
         {
@@ -36,7 +36,7 @@
             // 项目环境变量
             env: {
                 "NODE_ENV": "prod",
-                "PORT": 3000
+                "PORT": 80
             }
         }
     ]

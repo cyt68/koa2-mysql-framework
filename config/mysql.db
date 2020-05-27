@@ -1,0 +1,4 @@
+create table users(
+username varchar(32) not null COMMENT '姓名',
+password varchar(32) not null COMMENT '密码'
+);

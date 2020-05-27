@@ -4,7 +4,7 @@ import proxyHelper from '../utils/proxyHelper'
 const router = koaRouter()
 /**
  * 需要代理的接口配置类，直接转发至第三方去获取请求数据
- * 测试访问：http://localhost:3000/old/api/loginStatus
+ * 测试访问：http://localhost:80/old/api/loginStatus
  */
 
 const proxyApi = {

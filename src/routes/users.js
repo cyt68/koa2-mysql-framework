@@ -3,7 +3,7 @@ import usersController from '../controllers/usersController'
 
 const router = koaRouter()
 /**
- * 接口路径加前缀，如访问时使用 http://localhost:3000/users/getUserInfoByUserId
+ * 接口路径加前缀，如访问时使用 http://localhost:80/user/info
  */
 router.prefix('/users')
 

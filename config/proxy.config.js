@@ -7,14 +7,14 @@ module.exports = {
           }
     },
     uat: {
-        target: 'http://localhost:3000',
+        target: 'http://localhost:80',
         changeOrigin: true,
         pathRewrite:{
             '^/old/api/*': ''
           }
     },
     prod: {
-        target: 'http://localhost:3000',
+        target: 'http://localhost:80',
         changeOrigin: true,
         pathRewrite:{
             '^/old/api/*': ''

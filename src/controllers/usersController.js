@@ -12,7 +12,7 @@ class usersController {
    * 登录成功返回加签的token信息
    */
    static async login(ctx) {
-     logger.error('users/login', 'response:', process.env.NODE_ENV) 
+     logger.error('user/login', 'response:', process.env.NODE_ENV) 
      let params = ctx.request.body || ctx.request.query
      let username = escape(params.username)
      let password = escape(params.password)
@@ -28,18 +28,18 @@ class usersController {
               let token = jwt.sign(userInfo, ctx.request.header.publicKey, { expiresIn: '2h' })
               ctx.session.userInfo = userInfo
               helper.responseFormat(ctx, 200, '登录成功', token)
-              logger.info('users/login', 'response:', token)     
+              logger.info('user/login', 'response:', token)     
             } else {
               helper.responseFormat(ctx, 410, '用户名或者密码错误')
-              logger.error('users/login', 'response:', '用户名或者密码错误')    
+              logger.error('user/login', 'response:', '用户名或者密码错误')    
             }       
          } catch (err) {
             helper.responseFormat(ctx, 412, '用户信息查询失败', err)
-            logger.error('users/login', 'response:', err)
+            logger.error('user/login', 'response:', err)
          }
      } else {
          helper.responseFormat(ctx, 416, '查询参数缺失')
-         logger.error('users/login', 'params:', params)
+         logger.error('user/login', 'params:', params)
      }
    }
 
@@ -56,14 +56,14 @@ class usersController {
          try {
             let data = await usersService.getUserInfoByUserId(username)
             helper.responseFormat(ctx, 200, '查询成功', data)
-            logger.info('users/getUserInfoByUserId', 'response:', data)       
+            logger.info('user/info', 'response:', data)       
          } catch (err) {
             helper.responseFormat(ctx, 412, '查询失败', err)
-            logger.error('users/getUserInfoByUserId', 'response:', err)
+            logger.error('user/info', 'response:', err)
          }
      } else {
          helper.responseFormat(ctx, 416, '查询参数缺失')
-         logger.error('users/getUserInfoByUserId', 'response:', '查询参数缺失')
+         logger.error('user/info', 'response:', '查询参数缺失')
      }
   }
 

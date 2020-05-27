@@ -52,7 +52,7 @@ cd mv koa2-mysql-framework
 npm install
 npm run dev
 
-访问： http://127.0.0.1:3000/home
+访问： http://127.0.0.1:80/home
 ```
 ## 开发调试说明
 
@@ -89,7 +89,7 @@ app.use(jwt({
   secret: publicKey.toString()
 }).unless({
   path: [
-    /^\/users\/login/,
+    /^\/user\/login/,
     /^\/home/,
     /^\/assets/
   ] 
@@ -103,7 +103,7 @@ app.use(jwt({
 import axios from 'axios'
 import { getToken } from './tool'
 
-const DevBaseUrl = 'http://127.0.0.1:8080'
+const DevBaseUrl = 'http://127.0.0.1:80'
 const ProdBashUrl = 'https://xxx.xxx'
 
 let config = {
