@@ -5,18 +5,26 @@ const router = koaRouter()
 /**
  * 接口路径加前缀，如访问时使用 http://localhost:80/user/info
  */
-router.prefix('/users')
+// router.prefix('/users')
 
-// 测试登录
 router.post('/login', usersController.login)
 
-// 测试读取数据库
-router.get('/getUserInfoByUserId', usersController.getUserInfoByUserId)
+router.post('/logout', usersController.logout)
 
-// 测试访第三方接口
+router.get('/user/info', usersController.getUserInfo)
+
+router.get('/user/list', usersController.getUserList)
+
+router.post('/user/validate', usersController.validateUser)
+
+router.post('/user/add', usersController.addUser)
+
+router.post('/user/edit', usersController.editUser)
+
+router.post('/user/delete', usersController.deleteUser)
+
 router.get('/getRemoteData', usersController.getRemoteData)
 
-// 测试本地读取文件数据
 router.get('/readFiles', usersController.readFiles)
 
 export default router

@@ -5,7 +5,7 @@ export const errorRoute = ()=> {
         case 401:
           ctx.status = 401
           ctx.body = {
-            code: 200,
+            code: 401,
             msg: 'Authentication Error.Protected resource, use authorization header to get access.'
           }
           break

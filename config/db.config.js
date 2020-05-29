@@ -2,7 +2,7 @@ module.exports = {
   dev: {
     host: 'localhost',
     user: 'root',
-    password: '',
+    password: '123456',
     database: 'testdb',
     connectionLimit: 20
   },
